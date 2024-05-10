@@ -62,26 +62,26 @@ select opt in "${options[@]}"; do
 
             echo -e "${GRN}MDM enrollment has been bypassed!${NC}"
             echo -e "${NC}Exit terminal and reboot your Mac.${NC}"
-            # break
-            # ;;
-        # "Disable Notification (SIP)")
+            break
+            ;;
+        "Disable Notification (SIP)")
             # Disable Notification (SIP)
             echo -e "${RED}Please Insert Your Password To Proceed${NC}"
             sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
             sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
             sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
             sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-            # break
-            # ;;
-        # "Disable Notification (Recovery)")
+            break
+            ;;
+        "Disable Notification (Recovery)")
             # Disable Notification (Recovery)
             rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
             rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
             touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
             touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-            # break
-            # ;;
-        # "Check MDM Enrollment")
+            break
+            ;;
+        "Check MDM Enrollment")
             # Check MDM Enrollment
             echo ""
             echo -e "${GRN}Check MDM Enrollment. Error is success${NC}"
@@ -91,12 +91,12 @@ select opt in "${options[@]}"; do
             sudo profiles show -type enrollment
             break
             ;;
-        # "Reboot & Exit")
+        "Reboot & Exit")
             # Reboot & Exit
-            # echo "Rebooting..."
-            # reboot
-            # break
-            # ;;
+            echo "Rebooting..."
+            reboot
+            break
+            ;;
         *) echo "Invalid option $REPLY" ;;
     esac
 done
