@@ -89,14 +89,14 @@ select opt in "${options[@]}"; do
             echo -e "${RED}Please Insert Your Password To Proceed${NC}"
             echo ""
             sudo profiles show -type enrollment
-            # break
-            # ;;
+            break
+            ;;
         # "Reboot & Exit")
             # Reboot & Exit
             # echo "Rebooting..."
             # reboot
             # break
-            ;;
+            # ;;
         *) echo "Invalid option $REPLY" ;;
     esac
 done
